@@ -1,0 +1,40 @@
+from comet_ml import start
+from comet_ml.integration.sklearn import log_model
+import pandas as pd
+from prophet import Prophet
+import matplotlib.pyplot as plt
+
+experiment = start(
+  api_key="KuAMP2hyKePptyhrfV7YNCdpr",
+  project_name="time-series-projection",
+  workspace="rscottking73"
+)
+
+
+# Load the data
+df = pd.read_csv('https://raw.githubusercontent.com/randalscottking/retaildata/refs/heads/main/supersummary.csv',header=0,sep=',',on_bad_lines='skip')
+
+# Ensure the column names match what Prophet expects: 'ds' for the date column and 'y' for the value column.
+df['ds'] = pd.to_datetime(df['ShipDate']) 
+df['y'] = df['sum']
+
+# Keep only the necessary columns
+df = df[['ds', 'y']]
+
+# Fit Model
+model = Prophet()
+model.fit(df)
+
+# Create a DataFrame with future dates 
+future = model.make_future_dataframe(periods=180,freq='D')
+
+# Get the forecast
+forecast = model.predict(future)
+
+# Visualize 
+model.plot(forecast)
+plt.title('Financial Performance Forecast for the Next 6 Months')
+plt.show()
+
+# Display the forecast data
+forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(180) 
