@@ -1,6 +1,6 @@
 from sklearn.preprocessing import LabelEncoder
 
-categorical_feature = ['cat', 'dog', 'dog', 'cat', 'bird']
+categorical_feature = ["cat", "dog", "dog", "cat", "bird"]
 
 encoder = LabelEncoder()
 

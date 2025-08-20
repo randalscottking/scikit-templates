@@ -1,35 +1,42 @@
 # import the necessary packages
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib import gridspec
-from sklearn.metrics import classification_report, accuracy_score 
-from sklearn.metrics import precision_score, recall_score
-from sklearn.metrics import f1_score, matthews_corrcoef
-from sklearn.metrics import confusion_matrix
-
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    matthews_corrcoef,
+    precision_score,
+    recall_score,
+)
 
 data = pd.read_csv("credit.csv")
 
 # dividing the X and the Y from the dataset
-X = data.drop(['Class'], axis = 1)
+X = data.drop(["Class"], axis=1)
 Y = data["Class"]
 print(X.shape)
 print(Y.shape)
-# getting just the values for the sake of processing 
+# getting just the values for the sake of processing
 # (its a numpy array with no columns)
 xData = X.values
 yData = Y.values
 
 # Using Scikit-learn to split data into training and testing sets
 from sklearn.model_selection import train_test_split
+
 # Split the data into training and testing sets
 xTrain, xTest, yTrain, yTest = train_test_split(
-        xData, yData, test_size = 0.2, random_state = 42)
+    xData, yData, test_size=0.2, random_state=42
+)
 
 # Building the Random Forest Classifier (RANDOM FOREST)
 from sklearn.ensemble import RandomForestClassifier
+
 # random forest model creation
 rfc = RandomForestClassifier()
 rfc.fit(xTrain, yTrain)
@@ -57,12 +64,11 @@ MCC = matthews_corrcoef(yTest, yPred)
 print("The Matthews correlation coefficient is{}".format(MCC))
 
 # printing the confusion matrix
-LABELS = ['Normal', 'Fraud']
+LABELS = ["Normal", "Fraud"]
 conf_matrix = confusion_matrix(yTest, yPred)
-plt.figure(figsize =(12, 12))
-sns.heatmap(conf_matrix, xticklabels = LABELS, 
-            yticklabels = LABELS, annot = True, fmt ="d");
+plt.figure(figsize=(12, 12))
+sns.heatmap(conf_matrix, xticklabels=LABELS, yticklabels=LABELS, annot=True, fmt="d")
 plt.title("Confusion matrix")
-plt.ylabel('True class')
-plt.xlabel('Predicted class')
+plt.ylabel("True class")
+plt.xlabel("Predicted class")
 plt.show()
