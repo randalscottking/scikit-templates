@@ -1,4 +1,10 @@
+import pandas as pd
 from sklearn.preprocessing import OrdinalEncoder
+from sklearn.model_selection import train_test_split
+
+X, y = diamonds.drop("cut", axis=1), diamonds[["cut"]]
+# Load the diamonds dataset
+diamonds = pd.read_csv("diamonds.csv")  # Update the path if needed
 
 X, y = diamonds.drop("cut", axis=1), diamonds[["cut"]]
 

@@ -13,6 +13,8 @@ print(f"Original Employee Data:\n{df}\n")
 df_pandas_encoded = pd.get_dummies(df, columns=["Gender", "Remarks"], drop_first=True)
 print(f"One-Hot Encoded Data using Pandas:\n{df_pandas_encoded}\n")
 
+categorical_columns = ["Gender", "Remarks"]
+
 encoder = OneHotEncoder(sparse_output=False)
 
 one_hot_encoded = encoder.fit_transform(df[categorical_columns])
