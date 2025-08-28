@@ -1,14 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-from comet_ml import start
-from comet_ml.integration.sklearn import log_model
 from prophet import Prophet
-
-experiment = start(
-    api_key="KuAMP2hyKePptyhrfV7YNCdpr",
-    project_name="time-series-projection",
-    workspace="rscottking73",
-)
 
 
 # Load the data
