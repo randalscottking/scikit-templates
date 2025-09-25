@@ -26,8 +26,8 @@ Located in `/forecast/` directory, this module demonstrates time series forecast
 - Prophet forecasting implementation (`prophet_forecast.py`)
 
 ### Linear Regression
-Located in `/linearRegression/` directory:
-- Basic linear regression implementation (`linearRegression.py`)
+Located in `/linear_regression/` directory:
+- Basic linear regression implementation (`src/linearRegression.py`)
 
 ### Miscellaneous Utilities
 Located in `/misc/` directory, contains various utility scripts:
