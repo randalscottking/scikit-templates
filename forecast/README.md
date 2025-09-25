@@ -4,7 +4,7 @@ This module demonstrates time series forecasting using Facebook's Prophet librar
 
 ## Overview
 
-The implementation in `prophet_forecast.py` shows how to use Prophet for time series forecasting. Prophet is particularly effective for forecasting with:
+The implementation in `src/prophet_forecast.py` shows how to use Prophet for time series forecasting. Prophet is particularly effective for forecasting with:
 - Strong seasonal effects
 - Historical trends
 - Missing data
@@ -31,7 +31,7 @@ The implementation in `prophet_forecast.py` shows how to use Prophet for time se
 
 3. Run the script:
    ```bash
-   python prophet_forecast.py
+   python src/prophet_forecast.py
    ```
 
 ## Components

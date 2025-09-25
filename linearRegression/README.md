@@ -8,7 +8,7 @@ Linear regression is a fundamental machine learning algorithm that models the re
 
 ## Implementation
 
-The implementation in `linearRegression.py` demonstrates:
+The implementation in `src/linearRegression.py` demonstrates:
 - Data preprocessing
 - Model fitting
 - Prediction
@@ -31,7 +31,7 @@ Where:
 1. Prepare your data with features (X) and target variable (y)
 2. Run the script:
    ```bash
-   python linearRegression.py
+   python src/linearRegression.py
    ```
 
 ## Model Evaluation
