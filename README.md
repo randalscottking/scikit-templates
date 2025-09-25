@@ -1,6 +1,16 @@
 # Scikit-learn Templates
 
-This repository contains a collection of machine learning templates using scikit-learn for various common use cases and scenarios. Each template demonstrates different machine learning algorithms and techniques applied to real-world problems.
+This repository contains a comprehensive collection of machine learning templates using scikit-learn and other ML libraries for various common use cases and scenarios. Each template demonstrates different machine learning algorithms and techniques applied to real-world problems.
+
+## Project Overview
+
+This collection includes templates for:
+- Classification (Churn Prediction, Credit Card Fraud)
+- Regression (Linear Regression)
+- Time Series (Prophet Forecasting)
+- Natural Language Processing (Sentiment Analysis)
+- Educational Analytics (Student Placement Prediction)
+- Data Preprocessing and Utilities
 
 ## Project Structure
 
@@ -74,4 +84,76 @@ The misc directory contains various utility scripts that demonstrate common data
 - Different encoding techniques for categorical variables
 - Data splitting strategies
 
-For detailed usage of any specific module, please refer to the comments within each script.
+### Sentiment Analysis
+Located in `/sentiment/` directory, this module implements sentiment analysis for movie reviews:
+- Uses BERT for sequence classification
+- Includes data visualization and preprocessing
+- Handles both positive and negative sentiment classification
+- Features comprehensive error analysis and model evaluation
+
+### Student Placement Prediction
+Located in `/placement-prediction/` directory, this module predicts student placement outcomes:
+- Uses Random Forest and Logistic Regression models
+- Processes academic and extracurricular data
+- Provides comparative model performance analysis
+- Features automated data preprocessing pipeline
+
+## Common Requirements
+
+Common dependencies across projects include:
+```bash
+numpy>=1.19.2
+pandas>=1.2.3
+scikit-learn>=0.24.1
+matplotlib>=3.3.4
+```
+
+Each module may have additional specific requirements listed in their respective directories.
+
+## Getting Started
+
+1. Clone this repository
+```bash
+git clone https://github.com/yourusername/scikit-templates.git
+cd scikit-templates
+```
+
+2. Choose a project:
+```bash
+cd [project-directory]  # e.g., cd sentiment
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt  # if available
+# or install common requirements:
+pip install numpy pandas scikit-learn matplotlib
+```
+
+4. Run the desired script:
+```bash
+python src/[script-name].py  # e.g., python src/sentiment.py
+```
+
+## Project-Specific Documentation
+
+Each project directory contains its own README.md with detailed information about:
+- Project-specific requirements
+- Dataset details and structure
+- Model architectures and parameters
+- Usage examples and expected outputs
+- Performance metrics and evaluations
+
+For detailed usage of any specific module, please refer to the project's README and the comments within each script.
+
+## Contributing
+
+Feel free to contribute by:
+1. Adding new ML templates
+2. Improving existing implementations
+3. Enhancing documentation
+4. Reporting issues or suggesting improvements
+
+## License
+
+This project is licensed under the MIT License - see the individual project directories for specific details.
